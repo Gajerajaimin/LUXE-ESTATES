@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 220 60% 7%;
+    --card: 0 0% 100%;
+    --card-foreground: 220 60% 7%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 60% 7%;
+    --primary: 220 60% 7%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 215 35% 47%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 210 20% 97%;
+    --muted-foreground: 215 10% 45%;
+    --accent: 40 45% 55%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 216 20% 92%;
+    --input: 216 20% 92%;
+    --ring: 220 60% 7%;
+    --radius: 0px;
+    --surface: 210 20% 98%;
+    --text-secondary: 213 8% 46%;
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 220 60% 7%;
+    --foreground: 210 40% 98%;
+    --card: 220 50% 10%;
+    --card-foreground: 210 40% 98%;
+    --popover: 220 50% 10%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 210 40% 98%;
+    --primary-foreground: 220 60% 7%;
+    --secondary: 215 35% 47%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217 33% 17%;
+    --muted-foreground: 215 20% 65%;
+    --accent: 40 45% 55%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217 33% 17%;
+    --input: 217 33% 17%;
+    --ring: 213 27% 84%;
+    --surface: 220 50% 10%;
+    --text-secondary: 215 20% 65%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+  h1, h2, h3, .font-display {
+    font-family: 'Cormorant Garamond', serif;
+  }
+}
+
+@layer components {
+  .label-caps {
+    font-family: 'Inter', sans-serif;
+    @apply text-xs font-semibold uppercase tracking-[0.1em];
+  }
+  .section-padding {
+    @apply py-24 px-6 md:px-16 lg:px-24;
+  }
+  .hover-dim {
+    @apply transition-all duration-500;
+  }
+  .hover-dim:hover {
+    filter: brightness(0.85);
+  }
+  .property-card-overlay {
+    @apply absolute inset-0 flex items-center justify-center opacity-0 transition-opacity duration-500;
+    background: rgba(10, 17, 40, 0.3);
+  }
+  .property-card-overlay:hover {
+    @apply opacity-100;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
